@@ -1,7 +1,5 @@
 # MOTOR — Multimodal twO-wheeler Traffic behaviOuR Dataset
 
-Code for the paper: **"MOTOR: A Multimodal Dataset for twO-wheeler Traffic behaviOuR Analysis in Non-Lane-Disciplined Environments"** (ICRA 2026)
-
 ## Overview
 
 MOTOR is a multimodal dataset capturing rider behavior in chaotic, lane-free traffic with:
