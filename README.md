@@ -1,4 +1,4 @@
-# MOTOR — Multimodal twO-wheeler Traffic behaviOuR Dataset
+# MOTOR: Multimodal twO-wheeler Traffic behaviOuR Dataset
 
 This repository contains the model training pipeline and data processing tools.
 
