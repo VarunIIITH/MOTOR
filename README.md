@@ -196,13 +196,3 @@ data/clips/01_clip_002.mp4,data/gaze/01_clip_002.mp4,0,1,train,"[0.78, 0.91, ...
 data/clips/02_clip_001.mp4,data/gaze/02_clip_001.mp4,2,0,val,"[0.45, 0.67, ..., 0.89]"
 ```
 
-## Citation
-
-```bibtex
-@inproceedings{motor2026,
-    title={MOTOR: A Multimodal Dataset for twO-wheeler Traffic behaviOuR Analysis in Non-Lane-Disciplined Environments},
-    author={[Authors]},
-    booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
-    year={2026}
-}
-```
