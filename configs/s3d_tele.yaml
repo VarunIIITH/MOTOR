@@ -1,0 +1,33 @@
+model:
+  backbone: s3d
+  fusion: rgb_tele
+  modalities:
+  - rgb
+  - telemetry
+  head_hidden:
+  - 512
+  - 128
+  dropout: 0.4
+  tele_len: 256
+  tele_dim: 32
+training:
+  epochs: 50
+  batch_size: 8
+  lr_head: 0.0001
+  lr_tail: 3.0e-05
+  weight_decay: 0.0001
+  tail_blocks_k: 1
+  focal_gamma: 2.0
+  seed: 42
+data:
+  manifest_csv: data/train_val_manifest.csv
+  task: behavior
+  frames_per_clip: 16
+  img_size: 224
+  num_workers: 4
+  label_col: label
+  path_col: path_video
+  split_col: split
+output:
+  plots_dir: outputs/plots
+  checkpoints_dir: outputs/checkpoints

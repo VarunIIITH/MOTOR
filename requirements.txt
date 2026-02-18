@@ -1,0 +1,25 @@
+# Core training dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pandas>=2.0.0
+pyyaml>=6.0
+decord>=0.6.0
+matplotlib>=3.7.0
+scikit-learn>=1.3.0
+
+# Data pipeline dependencies
+opencv-python>=4.8.0
+moviepy>=1.0.3
+openpyxl>=3.1.0
+pyzbar>=0.1.9
+av>=10.0.0
+
+# Detection and tracking (for tools/data_pipeline/detect_track.py)
+ultralytics>=8.0.0
+
+# CLIP feature extraction (for tools/feature_extraction_clip.py)
+# transformers>=4.30.0
+
+# Aria VRS conversion (for tools/data_pipeline/aria_vrs_to_mp4.py)
+# projectaria-tools>=1.0.0
