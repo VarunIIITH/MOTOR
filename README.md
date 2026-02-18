@@ -1,13 +1,5 @@
 # MOTOR — Multimodal twO-wheeler Traffic behaviOuR Dataset
 
-## Overview
-
-MOTOR is a multimodal dataset capturing rider behavior in chaotic, lane-free traffic with:
-- **RGB egocentric video** (helmet-mounted front camera)
-- **Gaze data** (Pupil Invisible / Aria eye trackers)
-- **Telemetry** (speed + lean angle from GoPro GPS/IMU)
-- **11 maneuver classes** with legal/illegal annotations
-
 This repository contains the model training pipeline and data processing tools.
 
 ## Setup
