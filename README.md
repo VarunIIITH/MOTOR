@@ -39,12 +39,12 @@ python train.py --config configs/r3d18_cross_attn.yaml
 ```
 
 ### Available Backbones
-| Key | Architecture | Feature Dim |
-|-----|-------------|-------------|
-| `swin3d_t` | Swin Transformer 3D-Tiny | 768 |
-| `r3d_18` | ResNet3D-18 | 512 |
-| `mvit_v2_s` | MViTv2-Small | 768 |
-| `s3d` | S3D | 1024 |
+| Key | Architecture |
+|-----|-------------|
+| `swin3d_t` | Swin Transformer 3D-Tiny |
+| `r3d_18` | ResNet3D-18 |
+| `mvit_v2_s` | MViTv2-Small |
+| `s3d` | S3D |
 
 ### Fusion Strategies
 | Key | Modalities | Description |
