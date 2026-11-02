@@ -24,3 +24,17 @@ python train.py --config configs/swin3dt_gaze_tele.yaml
 ```
 
 The shipped config trains a three-stream fusion model (RGB + gaze + telemetry) on a Swin3D-T backbone — the configuration that performed best across our benchmarks. Edit the YAML or `train.py` to adapt to other backbones, modalities, or the legality task.
+
+## Citation
+
+```bibtex
+@INPROCEEDINGS{11696157,
+  author={Paturkar, Varun A. and Gangisetty, Shankar and Jawahar, C.V.},
+  booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)},
+  title={MOTOR: A Multimodal Dataset for Two-Wheeler Rider Behavior Understanding},
+  year={2026},
+  volume={},
+  number={},
+  pages={5406-5413},
+  doi={10.1109/ICRA57385.2026.11696157}}
+```
