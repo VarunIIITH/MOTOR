@@ -37,7 +37,7 @@ class TwoStreamFusion(nn.Module):
 class RGBTeleFusion(nn.Module):
     """RGB + Telemetry late fusion → classification."""
 
-    def __init__(self, backbone_name, n_classes, tele_len=256, tele_dim=32,
+    def __init__(self, backbone_name, n_classes, tele_len=128, tele_dim=32,
                  head_hidden=(512, 128), dropout=0.4):
         super().__init__()
         self.rgb_enc = build_backbone(backbone_name, freeze=True)
@@ -54,7 +54,7 @@ class RGBTeleFusion(nn.Module):
 class ThreeStreamFusion(nn.Module):
     """RGB + Gaze + Telemetry late fusion → classification."""
 
-    def __init__(self, backbone_name, n_classes, tele_len=256, tele_dim=32,
+    def __init__(self, backbone_name, n_classes, tele_len=128, tele_dim=32,
                  head_hidden=(512, 128), dropout=0.4):
         super().__init__()
         self.rgb_enc = build_backbone(backbone_name, freeze=True)
@@ -146,14 +146,14 @@ def build_model(cfg: dict) -> nn.Module:
     elif fusion == "rgb_tele":
         return RGBTeleFusion(
             backbone, n_classes,
-            tele_len=mcfg.get("tele_len", 256),
+            tele_len=mcfg.get("tele_len", 128),
             tele_dim=mcfg.get("tele_dim", 32),
             head_hidden=hidden, dropout=dropout,
         )
     elif fusion == "three_stream":
         return ThreeStreamFusion(
             backbone, n_classes,
-            tele_len=mcfg.get("tele_len", 256),
+            tele_len=mcfg.get("tele_len", 128),
             tele_dim=mcfg.get("tele_dim", 32),
             head_hidden=hidden, dropout=dropout,
         )

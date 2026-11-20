@@ -17,6 +17,18 @@ conda activate motor
 pip install -r requirements.txt
 ```
 
+## Data preparation
+
+Download the dataset from [Hugging Face](https://huggingface.co/datasets/varunpaturkar/MOTOR) and build the training manifest:
+
+```bash
+python tools/make_manifest.py --data_root /path/to/MOTOR --task behavior --out data/train_val_manifest.csv
+```
+
+The manifest uses the dataset's rider-disjoint train/val split (`Split` column of `annotations.csv`). Use `--task legality` for the legality task, and `--gaze_dir` to point to gaze-centred clips for the gaze stream.
+
+**Telemetry input.** As in the paper, the telemetry stream uses two signals from each clip's telemetry CSV: speed (`speed_2d_mps`) and lean, taken from the front-camera gyroscope axis the motorcycle leans around (`gyro_z`, roll rate in rad/s). Each is averaged into 64 equal-time bins and the two are concatenated into a 128-dimensional vector (`utils/telemetry.py`), which a three-layer MLP projects to the telemetry embedding.
+
 ## Training
 
 ```bash

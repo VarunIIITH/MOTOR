@@ -17,7 +17,7 @@ def uniform_indices(n, k):
 class RGBGazeTeleDataset(Dataset):
     """Returns (rgb_clip, gaze_clip, tele_vec, label) for three-stream fusion."""
 
-    def __init__(self, df, clip_len, backbone, tele_len=256, mode="train",
+    def __init__(self, df, clip_len, backbone, tele_len=128, mode="train",
                  img_size=224, path_col="path_video", gaze_col="path_gaze",
                  label_col="label"):
         self.df = df.reset_index(drop=True)

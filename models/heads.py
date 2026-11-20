@@ -23,7 +23,7 @@ class MLPHead(nn.Module):
 class TelemetryHead(nn.Module):
     """Projects raw telemetry vector to a compact embedding."""
 
-    def __init__(self, in_dim=256, out_dim=32, dropout=0.1):
+    def __init__(self, in_dim=128, out_dim=32, dropout=0.1):
         super().__init__()
         self.proj = nn.Sequential(
             nn.Linear(in_dim, 128), nn.ReLU(True), nn.Dropout(dropout),

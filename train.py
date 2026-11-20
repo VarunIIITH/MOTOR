@@ -23,22 +23,7 @@ from datasets.rgb_gaze_tele_dataset import RGBGazeTeleDataset
 from utils.losses import FocalCrossEntropy
 from utils.training import run_epoch, build_optimizer, unfreeze_tail
 from utils.plotting import plot_training_curves, plot_confusion_matrix
-
-
-# ── Class label mapping ───────────────────────────────────────────────
-
-BEHAVIOR_CLASSES = [
-    "overtake", "lane change", "going straight", "left turn",
-    "obstruction avoidance", "weaving through traffic",
-    "distracted driving", "stop", "right turn", "violation", "u-turn",
-]
-
-BEHAVIOR_ABBREV = {
-    "distracted driving": "DD", "going straight": "GS", "lane change": "LC",
-    "left turn": "LT", "obstruction avoidance": "OA", "overtake": "OT",
-    "right turn": "RT", "stop": "Stop", "u-turn": "UT", "violation": "Vio",
-    "weaving through traffic": "WTT",
-}
+from utils.labels import BEHAVIOR_CLASSES, BEHAVIOR_ABBREV
 
 
 # ── Dataset builder ───────────────────────────────────────────────────
@@ -61,10 +46,10 @@ def build_dataset(df, cfg, mode):
     elif fusion == "two_stream":
         return RGBGazeDataset(**common, gaze_col=dcfg.get("gaze_col", "path_gaze"))
     elif fusion == "rgb_tele":
-        return RGBTeleDataset(**common, tele_len=mcfg.get("tele_len", 256))
+        return RGBTeleDataset(**common, tele_len=mcfg.get("tele_len", 128))
     elif fusion == "three_stream":
         return RGBGazeTeleDataset(**common, gaze_col=dcfg.get("gaze_col", "path_gaze"),
-                                  tele_len=mcfg.get("tele_len", 256))
+                                  tele_len=mcfg.get("tele_len", 128))
     else:
         raise ValueError(f"Unknown fusion: {fusion}")
 
